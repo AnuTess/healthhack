@@ -47,13 +47,14 @@
           "Vision Problems",
           "Foot Numbness",
         ];
-        $('#advise').tokenfield({
-          autocomplete: {
-            source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-            delay: 100
-          },
-          showAutocompleteOnFocus: true
-        })
+
+        $( "#availableTags" ).autocomplete({
+          source: availableTags
+        });
+
+        $( "#availableTags1" ).autocomplete({
+      source: availableTags
+    });
         });
     </script>
   </head>
