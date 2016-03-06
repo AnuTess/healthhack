@@ -1,0 +1,73 @@
+body {
+	color: #333;
+}
+
+.jumbotron{
+  padding-top: 0;
+}
+
+.jumbotron h1{
+  font-weight: bold;
+}
+
+.controls{
+  font-family: "Lato", sans-serif;
+}
+
+.compact{
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+}
+
+#flatiron{
+	background: 
+    url("../images/flatiron.jpg") no-repeat 50% 20%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#about{
+  background: linear-gradient(
+    rgba(16,16,16, 0.2), 
+    rgba(16,16,16, 0.2)
+    ),
+    url("../images/central.jpg") no-repeat 50% 25%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#contact{
+  background: linear-gradient(
+    rgba(16,16,16, 0.2), 
+    rgba(16,16,16, 0.2)
+    ),
+    url("../images/brooklynbridge.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+@media (max-width: 768px) {
+  .compact{
+  margin-left: 0;
+  margin-right: 0;
+  }
+}
+
+
+.btn {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #F2786D;
+}
+
+p{
+  font-size: 1.5em;
+}
