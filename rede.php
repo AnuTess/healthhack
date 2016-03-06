@@ -35,31 +35,6 @@
   </head>
 
   <body>
-    <?php 
-
-    $errorMessage = "";
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $hometown=$_POST['hometown'];
-    $daterange=$_POST['daterange'];
-    $accommodation=$_POST['accommodation'];
-    $budget=$_POST['budget'];
-    $party=$_POST['party'];
-    $cf=$_POST['cf'];
-    $destinations=$_POST['destinations'];
-    $interests=$_POST['interests'];
-    $comment=$_POST['comment'];
-
-     $link = mysqli_connect("104.236.194.71","rede","redeme", "rede") or die("failed to connect to server!!");
-
-     $sql = "SELECT * FROM patient"; 
-
-     $record = mysql_query($sql);
-
-     mysqli_query($link,$insqDbtb) or die(mysqli_error($link));
-
-     mysqli_close($link);
-    ?>
 
     <header class="jumbotron subhead" style="background-color:#000;">
       <nav class="navbar navbar-change navbar-static-top">
@@ -91,6 +66,15 @@
       </div>
     </header>
 
+    <?php 
+
+     $link = mysqli_connect("localhost","root","", "rede") or die("failed to connect to server!!");
+
+     $sql = 'SELECT * FROM patient'; 
+
+     $record = mysqli_query($link, $sql);
+    ?>
+
     <div class="site-wrapper">
         <div class="inner cover">
               <table class="table table-striped">
@@ -99,15 +83,28 @@
                     <th>Name</th>
                     <th>Value</th>
                     <th>Normal</th>    
-                    <th>Important</th>
                     <th>New</th>
+                    <th>Important</th>
                     <th>Meaning</th>
                     <th>To Do</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  while($)
+                   while($patient=mysqli_fetch_assoc($record)){
+                    echo "<tr>";
+
+                    echo "<td>".$patient['biomarker']."</td>";
+                    echo "<td>".$patient['biomarker_value']."</td>";
+                    echo "<td>".$patient['biomarker_range']."</td>";
+
+                    echo "<td>"."<input type='text' name='name'>"."</td>";
+                    echo "<td>"."<input type='text' name='name'>"."</td>";
+                    echo "<td>"."<input type='text' name='name'>"."</td>";
+                    echo "<td>"."<input type='text' name='name'>"."</td>";
+
+                    echo "</tr>";
+                   }
                   ?>
                 </tbody>
               </table>
