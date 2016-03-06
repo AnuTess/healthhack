@@ -24,6 +24,8 @@
     <link async href='https://fonts.googleapis.com/css?family=Avenir:100,800|Lato' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="http://www.d3plus.org/js/d3.js"></script>
+    <script src="http://www.d3plus.org/js/d3plus.js"></script>
     <script>
       $(function(){
             if($(window).width() < 1025){
@@ -31,16 +33,110 @@
             $('nav').removeClass('navbar-static-top').addClass('navbar-fixed-top');
             $('body').css({"padding-top": "70px"});
             }
-        });
+      });
+
+      
+   
+  
     </script>
 
     <!--style for patient interface-->
     <style>
-    .info-causes-simple {
+
+    #info1 {
       display: none;
-      text-align: center;
+    }
+
+    #info2 {
+      display: none;
+    }
+    #viz1B {
+      height: 50px;
+      width: 100px;
+      margin-left: 450px;
+      background-color: green;
+      position: absolute;
+    }
+    #viz1N {
+      height: 50px;
+      width: 100px;
+      margin-left: 550px;
+      background-color: yellow;
+      position: absolute;
+    } 
+    #viz1A {
+      height: 50px;
+      width: 100px;
+      margin-left: 650px;
+      background-color: red;
+      position: absolute;
+    }
+
+     #viz1L {
+      height: 60px;
+      width: 5px;
+      margin-left: 620px;
+      position: relative;
+      background-color: #802929;
+      margin-top: -10px;
+    }
+
+    #viz2 {
+      height: 400px;
+      width: 600px;
+      margin-left: 300px;
+    }
+
+    #viz3 {
+      height: 400px;
+      width: 600px;
+      margin-left: 300px;
+    }
+
+    #viz4 {
+      height: 400px;
+      width: 600px;
+      margin-left: 300px;
     }
     
+
+
+
+    h2 {
+      height: 100px;
+      color: red;
+    }
+
+    h3 {
+      height: 50px;
+      font-family: "Sans-Serif";
+      font-size: 40px;
+      color: #802929;
+    }
+
+    h4 {
+      height: 100px;
+      font-family: "Sans-Serif";
+      font-size: 40px;
+      color: #802929;
+    }
+
+    h5 {
+      height: 50px;
+      font-family: "Sans-Serif";
+      font-size: 40px;
+      color: #802929;
+    }
+
+    h6 {
+      width: 700px;
+      font-family: "Sans-Serif";
+      font-size: 40px;
+      color: #802929;
+      text-align: center;
+      margin-left: 250px;
+    }
+
     </style> 
 
   </head>
@@ -96,135 +192,63 @@
       </div>
     </header>
 
-    <div class="site-wrapper">
-        <div class="inner cover">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Value</th>
-                    <th>Normal</th>    
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  while($)
-                  ?>
-                </tbody>
-              </table>
+    <div class="info">
+        <h1> Your HbA1C level</h1>
+        <h2> 6 % </h2>
+        <div id="viz1B" >Normal</div>
+        <div id="viz1N" >Prediabetes</div>
+        <div id="viz1A" >Diabetes</div>
+        <div id="viz1L" ></div>
+        <br>
+         <br>
+          <br>
+           <br>
+        <h3>HbA1C = glycated haemoglobin</h3>
+        <p> Develops when excess sugar binds to the hemoglobin protein in your red blood cells</p>
 
-              <div class="control-group" style="text-align: center; padding-top: 10px; padding-bottom: 10px"> 
-                <div class="controls">
-                  <button type="submit" name="submit" class="btn">Submit</button>
-                </div>
-              </div>
+        <button type="button" class="btn-default3">More
+        </button>
+        
+        <div class="info1" id="info1">ADD INFO</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4> Possible Causes of an abnormal HbA1C level</h4>
+        <div id="viz2"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h5> You might be pre-diabetic </h5>
+        <button type="button" class="btn-default3 2">More
+        </button>
+        
+        <div class="info2" id="info2">
+        Elevated HbA1c levels mean that blood sugar levels have been too high for the past three months (the lifespan of a red blood cell). This test can be used to indicate diabetes or pre-diabetes.
+        While the blood glucose level is the concentration of glucose in your blood at a single point in time (the very moment of the test), the HbA1c test serves as an overall marker of what your average levels are over a period of three months. The higher the HbA1c, the greater the risk of developing or worsening diabetes-related complications.
+
         </div>
-    </div>
-    
-    <button type="button" class="btn-default3">
-        <span class="glyphicon glyphicon-king"></span> More
-    </button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h6> A badly controlled diabetes could put you at a greater risk for many problems:</h6>
 
-    <div class="info-simple">
-	    <p>
-		<xmp theme="united" style="display:none;">
-		##What do my Creatinine Blood Test Results Mean?
+        <div id="viz3"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h6> But, there are a lot of things you can do to control these problems now and perhaps never have diabetes </h6>
 
-		Creatinine is measured in milligrams per deciliter of blood (mg/dL). People who are more muscular tend to have higher creatinine levels. Results may also vary depending on age and gender.
+        <div id="viz4"></div>
 
-		> In general, however, normal creatinine levels range from 0.7 to 1.3 mg/dL in men and 0.6 to 1.1 mg/dL in women.
+        <a href="progress.html">Progress Management</a>
 
-		High serum creatinine levels in the blood indicate that the kidneys aren't functioning properly.
-
-		##What can cause high Creatinine levels in my blood?
-
-		Your blood creatinine levels may be slightly elevated or higher than normal due to:
-
-		* a blocked urinary tract
-		* a high-protein diet
-		* dehydration
-		* kidney problems, such as kidney damage or infection
-		* reduced blood flow to the kidneys due to shock, congestive heart failure, or complications of diabetes
-
-		It's uncommon to have low levels of creatinine, but this can occur as a result of certain conditions that cause decreased muscle mass. They're usually not any cause for concern.
-
-		It's important to note that normal and abnormal ranges can vary among labs because some use unique measurements or test different samples. You should always meet with you doctor to discuss your test results in more detail. They'll be able to tell you if more testing is necessary and if any treatment will be required.
-
-		For more detailed information, or to read other people's stories, please visit [http://www.medicinenet.com/creatiine_blood_test/article.htm](http://www.medicinenet.com/creatinine_blood_test/article.htm)
-
-		Most doctors would suggest for people with elevated creatinine levels to lower their protein intake. Speak to your doctor if this is right for you.
-
-		Be more alert to kidney and urinary tract infections.
-		</xmp>
-
-		<script src="http://stapdownjs.com/v/0.2/strapdown.js"></script>
-	    </p>
-    </div>
-
-    <div class="info-medium">
-	    <p>
-	  	<xmp theme="united" style="display:none">
-		##What is Creatinine and Creatinine clearance?
-
-		Creatinine is a waste product that is produced continuously during normal muscle breakdown. The kidneys filter creatinine from the blood into the urine, and reabsorb almost none of it.
-
-		The amount of blood the kidneys can make creatinine-free each minute is called the creatinine clearance. Creatinine clearance in a healthy young person is about 125 milliliters per minute -- meaning each minute, that person's kidneys clear 125 mL of blood free of creatinine. The GFR can vary depending on age, [sex](http://www.webmd.com/sex-relationships/default.htm), and size. Generally, the creatinine clearance is a good estimation of the glomerular filtration rate.
-
-		##Measuring Creatinine clearance and renal function
-
-		Doctors use creatinine and creatinine clearance tests to check renal function (kidney function). Testing the rate of creatinine clearance shows the kidneys' ability to filter the blood. As renal function declines, creatinine clearance also goes down.
-
-		There are two main ways doctors use creatinine tests to measure kidney function:
-
-		* Creatinine clearance can be precisely determined by measuring the amount of creatinine present in a sample of urine collected over 24 hours. This method requires a person to urinate exclusively in a plastic jug for one day, then bring it in for testing. Although the urine creatinine measurement method is inconvenient, it may be necessary to diagnose some kidney conditions.
-
-		*GFR can be estimated using a single blood level of creatinine, which your doctor enters into a formula. Different formulas are available, which take into account age, [sex](http://www.webmd.com/sex-relationships/rm-quiz-sex-fact-fiction), and sometimes [weight](http://www.webmd.com/diet/healthy-weight-what-is-a-healthy-weight) and ethnicity. The higher the blood creatinine level, the lower the estimated GFR and creatinine clearance.
-
-		For practical reasons, the blood test estimation method for GFR is used far more often than the 24-hour urine collection test for creatinine clearance.
-
-
-		##What does elevanted Creatinine mean?
-
-		In general, normal creatinine levels range from 0.7 to 1.3 mg/dL in men and 0.6 to 1.1 mg/dL in women. High serum creatinine levels in the blood indicate that the kidneys aren’t functioning properly.
-
-		A low GFR or creatinine clearance demonstrates [kidney disease](http://www.webmd.com/a-to-z-guides/understanding-kidney-disease-basic-information). The decline in kidney function can be either acute (sudden, often reversible) or chronic (long-term and irreversible). Repeated GFR or creatinine clearance measurements over time can identify kidney disease as acute or chronic.
-
-		Kidney function and creatinine clearance naturally decline with age. Fortunately, the kidneys have a huge reserve capacity. Most people can lose well over half their renal function without symptoms or significant problems.
-
-		Doctors determine the severity of [chronic kidney disease](http://www.webmd.com/a-to-z-guides/chronic-kidney-disease-topic-overview) with a staging system that uses GFR:
-
-		Stage 1: GFR 90 or greater (normal kidney function)
-		
-		Stage 2: GFR 60-90 (mild decline in kidney function)
-		
-		Stage 3: GFR 30-59 (moderate decline in kidney function)
-		
-		Stage 4: GFR 15-29 (severe decline in kidney function)
-		
-		Stage 5: GFR less than 15 ([kidney failure](http://www.webmd.com/a-to-z-guides/acute-renal-failure-topic-overview), usually requiring [dialysis](http://www.webmd.com/a-to-z-guides/kidney-dialysis))
-		
-		People over age 60 may have an apparently normal creatinine blood level, but still have a low GFR and creatinine clearance. The 24-hour urine collection method, or one of the GFR estimation formulas, can more accurately identify the decline in kidney function.
-
-		##What do to about a low Creatinine clearance
-
-		If you have a low GFR or creatinine clearance, your doctor will design an action plan with you to address the problem.
-
-		The main causes of chronic kidney disease are [high blood pressure](http://www.webmd.com/hypertension-high-blood-pressure/default.htm) and [diabetes](http://www.webmd.com/diabetes/default.htm). If you have these conditions, the first step is to get them under control with improved diet, [exercise](http://www.webmd.com/fitness-exercise/default.htm), and [medications](http://www.webmd.com/drugs/index-drugs.aspx). If these conditions are not present, further testing may be needed to identify the cause of kidney disease.
-		
-		</xmp>
-
-		<script src = "http://strapdownjs.com/v/0.2/strapdown.js"></script>
-	    </p>
-    </div>
-
-    <div class="info-advanced">
-	    <p>
-		<xmp theme="united" style="display:none">
-
-		</xmp>
-
-		<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-	    </p>
     </div>
 
     <div class="mastfoot">
