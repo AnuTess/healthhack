@@ -101,10 +101,8 @@
 
     if(isset($_POST['send'])){
     $errorMessage = "";
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $hometown=$_POST['hometown'];
-    $daterange=$_POST['daterange'];
+    $causes=$_POST['causes'];
+    $advise=$_POST['advise'];
 
     echo "<p><span class='glyphicon glyphicon-ok-sign'></span>Great! You'll receive a confirmation email in a moment.</p>"."\n";
 
