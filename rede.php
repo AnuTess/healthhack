@@ -157,7 +157,7 @@
             <div class="control-group col-sm-12">
               <label class="control-label" for="inputRisks">Causes:</label>
                 <div class="controls">
-                  <textarea class="form-control" id="availableTags" name="risks" type="text" rows="3"></textarea>
+                  <textarea class="form-control" id="availableTags" name="causes" type="text" rows="3"></textarea>
                 </div>
             </div>
 
